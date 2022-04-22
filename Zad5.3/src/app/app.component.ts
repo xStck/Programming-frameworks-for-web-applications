@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
     { name: 'Tenis stołowy', id: 4, selected: false }
   ]
   currentDate = new Date();
-  member = new Member('', new Date(), '', [], '' , '');
+  member = new Member('', '', new Date(), '', [], '' , '');
   selectedExercises: string[];
   submitted = false;
   membershipForm: FormGroup;
@@ -46,6 +46,7 @@ export class AppComponent implements OnInit {
     this.membershipForm = new FormGroup({
       memberName: new FormControl(null),
       mdate: new FormControl(this.datePipe.transform(this.currentDate, 'yyyy-MM-dd')),
+      email: new FormControl(null, Validators.email),
       membershipType: new FormControl('Silver'),
       exerciseSelection: this.createExercises(this.exercises),
       payment: new FormControl('', Validators.required),
@@ -70,6 +71,7 @@ export class AppComponent implements OnInit {
     this.submitted = true;
     this.member.name = this.membershipForm.value.memberName;
     this.member.membershipDate = this.membershipForm.value.mdate;
+    this.member.mail = this.membershipForm.value.email;
     this.member.membershipType = this.membershipForm.value.membershipType;
     this.member.exercises = this.getSelectedExecrcisesNames();
     this.member.phone = this.membershipForm.value.phone;
