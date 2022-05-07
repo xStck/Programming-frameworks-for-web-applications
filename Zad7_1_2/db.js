@@ -1,6 +1,7 @@
-const mongoose = require("mongoose")
+var  mongoose = require("mongoose")
+
 mongoose.connect(
-    "mongodb://localhost:27017/membership",
+    "mongodb+srv://student:student@membership.u40u9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     {
         useNewUrlParser: true
     },
@@ -12,4 +13,5 @@ mongoose.connect(
         }
     }
 )
-require("./membership.model")
+
+//require("./membership.model")

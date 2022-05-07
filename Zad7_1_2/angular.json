@@ -75,7 +75,7 @@
               "browserTarget": "Zad7_1_2:build:production"
             },
             "development": {
-              "browserTarget": "Zad7_1_2-frontend:build:development"
+              "browserTarget": "Zad7_1_2:build:development"
             }
           },
           "defaultConfiguration": "development"

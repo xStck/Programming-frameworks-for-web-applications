@@ -11,6 +11,7 @@ import { AddFormDataService } from './add-form-data.service';
   //styleUrls: ['./app.component.css'],
   providers: [DatePipe]
 })
+
 export class AppComponent implements OnInit {
   title = 'Zad7_1';
   membershiptypes = ['Student', 'Pracownik', 'Gość'];
@@ -29,6 +30,7 @@ export class AppComponent implements OnInit {
     { name: 'Koszykówka', id: 3, selected: false },
     { name: 'Tenis stołowy', id: 4, selected: false }
   ]
+
   currentDate = new Date();
   member = new Member('', '', new Date(), '', [], '', '');
   selectedExercises: string[];
@@ -53,7 +55,7 @@ export class AppComponent implements OnInit {
       memberName: new FormControl(null),
       mdate: new FormControl(this.datePipe.transform(this.currentDate, 'yyyy-MM-dd')),
       email: new FormControl(null, Validators.email),
-      membershipType: new FormControl('Silver'),
+      membershipType: new FormControl('Student', Validators.required),
       exerciseSelection: this.createExercises(this.exercises),
       payment: new FormControl('', Validators.required),
       phone: new FormControl('', Validators.pattern(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/im))
@@ -62,7 +64,7 @@ export class AppComponent implements OnInit {
 
   createExercises(exerciseList): FormArray {
     const arr = exerciseList.map(exercise => {
-      return new FormControl(exercise.selected)
+      return new FormControl(exercise.selected, Validators.required)
     });
     return new FormArray(arr);
   }
