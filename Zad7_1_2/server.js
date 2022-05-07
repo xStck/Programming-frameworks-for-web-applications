@@ -1,4 +1,3 @@
-require("./db")
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -11,11 +10,9 @@ app.use(cors())
 
 app.use("/", membershipController)
 
-/*
 app.get('/', function (req, res) {
     res.send('Hello from server!');
 })
-*/
 
 app.post('/add', function (req, res) { // dodanie endpointa
     // req.body – zawiera dane członka nadchodzące z angulara

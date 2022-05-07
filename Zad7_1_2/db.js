@@ -14,4 +14,4 @@ mongoose.connect(
     }
 )
 
-//require("./membership.model")
+//require("./models/Membership.model")

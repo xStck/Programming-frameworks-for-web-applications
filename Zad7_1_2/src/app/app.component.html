@@ -46,9 +46,9 @@
         <div class="form-group">
           <label>Rodzaj zajęć sportowych</label>
           <div class="form-check"
-            *ngFor="let exercise of membershipForm.get('exerciseSelection')['controls']; let i = index">
+            *ngFor="let exercise of getExercises.controls; let i = index">
             <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" [formControl]="exercise">
+              <input type="checkbox" class="form-check-input" [formControl]="$any(exercise)">
               {{exercises[i].name}}
             </label>
           </div>
@@ -83,7 +83,7 @@
         </div>
 
 
-        <button type="submit" class="btn btn-success">Wyślij</button>
+        <button [disabled]="!membershipForm.valid"  type="submit" class="btn btn-success">Wyślij</button>
       </form>
     </div>
   </div>
