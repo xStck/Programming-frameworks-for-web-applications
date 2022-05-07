@@ -59,6 +59,7 @@ export class AppComponent implements OnInit {
       phone: new FormControl('', Validators.pattern(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/im))
     });
   }
+
   createExercises(exerciseList): FormArray {
     const arr = exerciseList.map(exercise => {
       return new FormControl(exercise.selected)
@@ -102,6 +103,7 @@ export class AppComponent implements OnInit {
   }
 
   getSelectedExecrcisesNames(): string[] {
+    
     this.selectedExercises = this.membershipForm.value.exerciseSelection.map((selected, i) => {
       if (selected) {
         return this.exercises[i].name;
