@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Zad7_1": {
+    "Zad7_1_2": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/zad7-1-frontend",
+            "outputPath": "dist/Zad7-1-2",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Zad7_1-frontend:build:production"
+              "browserTarget": "Zad7_1_2:build:production"
             },
             "development": {
-              "browserTarget": "Zad7_1-frontend:build:development"
+              "browserTarget": "Zad7_1_2-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Zad7_1-frontend:build"
+            "browserTarget": "Zad7_1_2:build"
           }
         },
         "test": {
@@ -106,5 +106,5 @@
       }
     }
   },
-  "defaultProject": "Zad7_1-frontend"
+  "defaultProject": "Zad7_1_2"
 }
