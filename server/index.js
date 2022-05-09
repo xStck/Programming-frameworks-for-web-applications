@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const connection = require('./db')
-c
+
 const userRoutes = require("./routes/users")
 const authRoutes = require("./routes/auth")
 
